@@ -1,5 +1,8 @@
 class Review < ApplicationRecord
   belongs_to :product
+  validates :author, :rating, :content_body, presence: true
+  validates_length_of :content_body, maximum: 250, minimum: 50
+  validates :rating, :numericality => { greater_than: 0, less_than_or_equal_to: 5 }
 
   before_save(:titleize_author)
 
