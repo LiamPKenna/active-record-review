@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   def home
+    @most = Product.most_reviews.first
+    @products = Product.newest
     render :home
   end
 
@@ -16,6 +18,10 @@ class ProductsController < ApplicationController
       when 'high'
         @products = Product.by_high_price
       end
+    end
+    if params[:origin]
+      @origin = params[:origin]
+      @products = Product.from_origin(params[:origin])
     end
     render :index
   end

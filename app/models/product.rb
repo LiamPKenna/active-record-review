@@ -14,7 +14,9 @@ class Product < ApplicationRecord
 
   scope :newest, -> { order("created_at DESC").limit(3) }
 
-  scope :made_in_usa, -> { where("country_of_origin ilike ?", "USA") }
+  scope :from_origin, -> (origin_parameter) do
+    where("country_of_origin ilike ?", "#{origin_parameter}") 
+  end
 
   scope :by_reviews, -> {(
     select("products.id, products.name, count(reviews.id) as reviews_count")
