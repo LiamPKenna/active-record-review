@@ -18,3 +18,9 @@ p {
 .content {
   margin: 15px 10%;
 }
+
+.review {
+  text-align: center;
+  padding: 5%;
+  background-color: rgb(203, 247, 241);
+}
