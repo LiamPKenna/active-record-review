@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <div class="nav-bar table-responsive">
+      <table class="table">
+        <th><%= link_to "HOME", '/'%></th>
+        <th><%= link_to "PRODUCTS", products_path%></th>
+      </table>
+    </div>
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
     <%= yield %>
   </body>
 </html>
