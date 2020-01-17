@@ -8,12 +8,14 @@
       <th>Name <%= link_to "↑", products_path(:sort => 'name_a')%> <%= link_to "↓", products_path(:sort => 'name_z')%></th>
       <th>Price <%= link_to "↑", products_path(:sort => 'low')%> <%= link_to "↓", products_path(:sort => 'high')%></th>
       <th>Origin</th>
+      <th><%= link_to "Rating", products_path(:sort => 'rating')%></th>
     </tr>
     <%@products.each do |product|%>
     <tr>
       <td><%= link_to product.name, product_path(product)%></td>
       <td><%= number_to_currency(product.cost) %></td>
       <td><%= link_to product.country_of_origin, products_path(:origin => product.country_of_origin)%></td>
+      <td><%= "★" * product.average_rating %></td>
     </tr>
     <%end%>
   </table>

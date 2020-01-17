@@ -17,6 +17,10 @@ class ProductsController < ApplicationController
         @products = Product.by_low_price
       when 'high'
         @products = Product.by_high_price
+      when 'rating'
+        @products = Product.all.sort { 
+          |a,b| b.average_rating <=> a.average_rating
+        }
       end
     end
     if params[:origin]

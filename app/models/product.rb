@@ -33,6 +33,15 @@ class Product < ApplicationRecord
 
   scope :by_name_z, -> { order("name ASC") }
 
+  def average_rating
+    if self.reviews.length > 0
+      rating_sum = self.reviews.map { |r| r.rating }.reduce(:+)
+      rating_sum/self.reviews.length.round
+    else
+      0
+    end
+  end
+
   private
   def titleize_name
     self.name = self.name.split(' ').map { |w|
