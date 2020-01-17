@@ -1,1 +1,29 @@
-<h1>Home page!</h1>
+<div class="jumbotron">
+  <h1>Welcome to Mario's Specialty Food Products!</h1>
+</div>
+<div class="content">
+  <div class="top-dog">
+    <h3>Our most reviewed product:</h3>
+    <h2><%= link_to @most.name, product_path(@most)%></h2>
+  </div>
+  <%if @products.any?%>
+  <br>
+  <h3>Our newest products:</h3>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Origin</th>
+    </tr>
+    <%@products.each do |product|%>
+    <tr>
+      <td><%= link_to product.name, product_path(product)%></td>
+      <td><%= number_to_currency(product.cost) %></td>
+      <td><%= product.country_of_origin %></td>
+    </tr>
+    <%end%>
+  </table>
+  <%else%>
+  <p>No products to display.</p>
+  <%end%>
+</div>
