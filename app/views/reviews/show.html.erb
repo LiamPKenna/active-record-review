@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <h1>Review for <%= @product.name %></h1>
+  <h3>by <strong><%= @review.author %></strong><h3>
+</div>
+<div class="content review">
+  <h4>Rating: <%= "★" * @review.rating.to_i %></h4>
+  <br>
+  <div class="content-body">
+    <%= @review.content_body %>
+  </div>
+  <br>
+  <p><%= link_to "Edit review", edit_product_review_path(@review)%></p>
+  <p><%= link_to "Delete review", product_review_path(@review),
+    :data => {:confirm => "Are you sure?",
+    :method => "delete"} %></p>
+</div>
