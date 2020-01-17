@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   has_many :reviews, dependent: :destroy
+  validates :name, :cost, :country_of_origin, presence: true
 
   scope :most_reviews, -> {(
     select("products.id, products.name, count(reviews.id) as reviews_count")
