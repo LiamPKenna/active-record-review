@@ -16,3 +16,13 @@ Product.destroy_all
     )
 end
 
+prod = Product.all.map { |p| p.id }
+
+Review.destroy_all
+
+250.times do |index|
+  Review.create!(author: Faker::Name.name,
+    content_body: Faker::Hipster.paragraph_by_chars(characters: 100, supplemental: false),
+    rating: rand(5)+1,
+    product_id: prod[rand(prod.length)])
+end
