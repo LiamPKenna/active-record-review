@@ -5,6 +5,18 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    if params[:sort]
+      case params[:sort]
+      when 'name_a'
+        @products = Product.by_name_a
+      when 'name_z'
+        @products = Product.by_name_z
+      when 'low'
+        @products = Product.by_low_price
+      when 'high'
+        @products = Product.by_high_price
+      end
+    end
     render :index
   end
 

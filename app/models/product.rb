@@ -16,6 +16,21 @@ class Product < ApplicationRecord
 
   scope :made_in_usa, -> { where("country_of_origin ilike ?", "USA") }
 
+  scope :by_reviews, -> {(
+    select("products.id, products.name, count(reviews.id) as reviews_count")
+    .joins(:reviews)
+    .group("products.id")
+    .order("reviews_count DESC")
+  )}
+
+  scope :by_low_price, -> { order("cost ASC") }
+
+  scope :by_high_price, -> { order("cost DESC") }
+
+  scope :by_name_a, -> { order("name DESC") }
+
+  scope :by_name_z, -> { order("name ASC") }
+
   private
   def titleize_name
     self.name = self.name.split(' ').map { |w|

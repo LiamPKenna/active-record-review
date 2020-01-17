@@ -4,7 +4,11 @@
 <div class="content">
   <%if @products.any?%>
   <table class="table">
-    <tr><th>Name</th><th>Price</th><th>Origin</th></tr>
+    <tr>
+      <th>Name <%= link_to "↑", products_path(:sort => 'name_a')%> <%= link_to "↓", products_path(:sort => 'name_z')%></th>
+      <th>Price <%= link_to "↑", products_path(:sort => 'low')%> <%= link_to "↓", products_path(:sort => 'high')%></th>
+      <th>Origin</th>
+    </tr>
     <%@products.each do |product|%>
     <tr>
       <td><%= link_to product.name, product_path(product)%></td>
