@@ -3,11 +3,16 @@
 </div>
 <div class="content">
   <%if @products.any?%>
-  <ul>
+  <table class="table">
+    <tr><th>Name</th><th>Price</th><th>Origin</th></tr>
     <%@products.each do |product|%>
-    <li><%= link_to product.name, product_path(product)%></li>
+    <tr>
+      <td><%= link_to product.name, product_path(product)%></td>
+      <td><%= number_to_currency(product.cost) %></td>
+      <td><%= product.country_of_origin %></td>
+    </tr>
     <%end%>
-  </ul>
+  </table>
   <%else%>
   <p>No products to display.</p>
   <%end%>
