@@ -14,6 +14,8 @@ class Product < ApplicationRecord
 
   scope :newest, -> { order("created_at DESC").limit(3) }
 
+  scope :made_in_usa, -> { where("country_of_origin ilike ?", "USA") }
+
   private
   def titleize_name
     self.name = self.name.split(' ').map { |w|
