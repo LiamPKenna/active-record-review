@@ -2,3 +2,15 @@
   text-align: center;
   background-color: aquamarine;
 }
+
+.jumbotron {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  background-color: lightblue;
+  margin: 15px 18%;
+  border-radius: 10px;
+  padding: 8px;
+}
