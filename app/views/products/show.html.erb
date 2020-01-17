@@ -4,11 +4,16 @@
 </div>
 <div class="content">
   <%if @reviews.any?%>
-  <ul>
+  <h4>Reviews</h4>
+  <table class="table">
+    <tr><th>Author</th><th>Rating</th></tr>
     <%@reviews.each do |review|%>
-    <li><%= link_to review.author, product_review_path(review)%></li>
+    <tr>
+      <td><%= link_to review.author, product_review_path(review)%></td>
+      <td><%= link_to review.rating, product_review_path(review)%></td>
+    </tr>
     <%end%>
-  </ul>
+  </table>
   <%else%>
   <p>No reviews to display.</p>
   <%end%>
