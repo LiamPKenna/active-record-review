@@ -9,8 +9,8 @@
     <tr><th>Author</th><th>Rating</th></tr>
     <%@reviews.each do |review|%>
     <tr>
-      <td><%= link_to review.author, product_review_path(review)%></td>
-      <td><%= link_to review.rating, product_review_path(review)%></td>
+      <td><%= link_to review.author, product_review_path(@product, review)%></td>
+      <td><%= link_to review.rating, product_review_path(@product, review)%></td>
     </tr>
     <%end%>
   </table>
