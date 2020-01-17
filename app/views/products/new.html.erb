@@ -1,0 +1,15 @@
+<%= render "layouts/errors", :object => @product %>
+<div class="jumbotron">
+  <h2>New Product</h2>
+</div>
+<div class="content">
+  <%=form_for @product do |f|%>
+  <%=f.label :Product_Name%>
+  <%=f.text_field :name%>
+  <%=f.label :Cost%>
+  <%= f.number_field :cost, value: @product.cost ? '%.2f' % @product.cost : nil, min: 0, step: 0.01 %>
+  <%=f.label :Country_of_Origin%>
+  <%=f.text_field :country_of_origin%>
+  <%=f.submit%>
+  <%end%>
+</div>
