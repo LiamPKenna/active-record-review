@@ -1,6 +1,7 @@
 <div class="jumbotron">
   <h1><%= @product.name %></h1>
   <h3><strong><%= number_to_currency(@product.cost) %></strong> from <%= @product.country_of_origin %><h3>
+  <h4><%= "★" * @product.average_rating %></h4>
 </div>
 <div class="content">
   <%if @reviews.any?%>
@@ -10,7 +11,7 @@
     <%@reviews.each do |review|%>
     <tr>
       <td><%= link_to review.author, product_review_path(@product, review)%></td>
-      <td><%= link_to review.rating, product_review_path(@product, review)%></td>
+      <td><%= link_to "#{'★' * review.rating}", product_review_path(@product, review)%></td>
     </tr>
     <%end%>
   </table>
