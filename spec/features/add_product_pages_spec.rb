@@ -22,4 +22,4 @@ require 'rails_helper'
 #     click_on 'Create Product'
 #     expect(page).to have_content "Name can't be blank"
 #   end
-end
+# end
