@@ -28,3 +28,23 @@ p {
 .top-dog {
   text-align: center;
 }
+
+.form-group {
+  max-width: 500px;
+  margin: auto;
+}
+
+input {
+  width: 200px;
+  float: right;
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+}
+
+input[type="submit"] {
+  margin-top: 30px;
+  width: 100%;
+}
