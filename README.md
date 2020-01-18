@@ -22,22 +22,26 @@ _All user inputs are validated to meet the following specs:_
 
 ## Setup/Installation Requirements
 
+#### Required Versions
+
+* _Ruby @ 2.6.5_
+* _Rails @ 5.2.4_
+
+#### Installation
+
 * _Clone to local machine_
+* _Verify that you are running postgresql locally_
 * _In project root folder:_
   * _$ bundle install_
-  * _If on Windows:_
-    * _Find the files app.rb and spec/spec_helper.rb_
-    * _Comment out the DB loader for Mac and remove comment from the Windows loader_
-    * _Follow the directions in config.rb.template and rename as config.rb_
-  * _$ createdb volunteer_tracker_
-  * _$ psql volunteer_tracker < database_backup.sql_
-  * _$ createdb -T volunteer_tracker volunteer_tracker_test_
-  * _$ ruby app.rb_
+  * _$ rake db:create_
+  * _$ rake db:migrate_
+  * _$ rake db:test:prepare_
+  * _$ rails s_
 
 _To explore the source code, feel free to browse on github or clone to your local machine_
 
 ## Known Bugs
-_No known bugs at this time._
+_Integration tests will not run unless CSS imports are commented out in application.css._
 
 ## Support and contact details
 _Any issues or concerns, please email liam@liamkenna.com_
