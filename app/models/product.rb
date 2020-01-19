@@ -29,9 +29,9 @@ class Product < ApplicationRecord
 
   scope :by_high_price, -> { order("cost DESC") }
 
-  scope :by_name_a, -> { order("name DESC") }
+  scope :by_name_a, -> { order("name ASC") }
 
-  scope :by_name_z, -> { order("name ASC") }
+  scope :by_name_z, -> { order("name DESC") }
 
   def average_rating
     if self.reviews.length > 0
