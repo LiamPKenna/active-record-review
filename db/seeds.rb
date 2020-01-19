@@ -11,7 +11,7 @@ Product.destroy_all
 50.times do |index|
   Product.create!(
       name: "#{Faker::Dessert.flavor} #{Faker::Dessert.variety}",
-      cost: rand(0.5..150.99),
+      cost: rand(0.5..20.99),
       country_of_origin: Faker::Space.planet
     )
 end
