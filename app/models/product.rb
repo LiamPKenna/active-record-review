@@ -35,8 +35,8 @@ class Product < ApplicationRecord
 
   def average_rating
     if self.reviews.length > 0
-      rating_sum = self.reviews.map { |r| r.rating }.reduce(:+)
-      rating_sum/self.reviews.length.round
+      rating_sum = self.reviews.map { |r| r.rating }.reduce(:+) * 1.0
+      (rating_sum/self.reviews.length).round
     else
       0
     end
