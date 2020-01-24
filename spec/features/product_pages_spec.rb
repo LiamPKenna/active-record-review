@@ -69,4 +69,19 @@ describe "the add a product process" do
     expect(page).to have_content 'Test2 successfully updated!'
   end
 
+  it "gives an error when no name is entered when editing" do
+    visit "/products/#{@product2.id}"
+    click_on 'Edit product'
+    fill_in 'product[name]', :with => ''
+    click_on 'Update Product'
+    expect(page).to have_content "Name can't be blank"
+  end
+
+  it "allows admin users to delete products" do
+    visit "/products/#{@product2.id}"
+    click_on 'Delete product'
+    page.accept_alert
+    expect(page).to not_have_content 'Test2'
+  end
+
 end
