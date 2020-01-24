@@ -2,17 +2,17 @@
   <br>
   <h1> Sign in</h1>
   <br>
-  <%= form_for signin_path do |form| %>
+  <%= form_tag signin_path do %>
     <table class="table user">
       <tr>
-        <td><%= form.label "Email" %></td>
-        <td><%= form.text_field :email %></td>
+        <td><%= label_tag "Email" %></td>
+        <td><%= text_field_tag :email %></td>
       </tr>
       <tr>
-        <td><%= form.label "Password" %></td>
-        <td><%= form.password_field :password %></td>
+        <td><%= label_tag "Password" %></td>
+        <td><%= password_field_tag :password %></td>
       </tr>
     </table>
-    <%= form.submit "Sign In" %>
+    <%= submit_tag "Sign In" %>
   <% end %>
 </div>
