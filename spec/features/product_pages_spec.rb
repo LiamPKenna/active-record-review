@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-describe "the add a product process" do
+describe "the product creation and editing process" do
 
   before(:all) do
     products = Product.all
@@ -77,11 +77,5 @@ describe "the add a product process" do
     expect(page).to have_content "Name can't be blank"
   end
 
-  it "allows admin users to delete products" do
-    visit "/products/#{@product2.id}"
-    click_on 'Delete product'
-    page.accept_alert
-    expect(page).to not_have_content 'Test2'
-  end
 
 end
