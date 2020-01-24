@@ -79,6 +79,8 @@ describe "the product creation and editing process" do
 
   it "allows users to sort products by name, price, and raiting" do
     visit "/products"
+    visit "/products?origin=USA"
+    visit "/products?origin=Canada"
     visit "/products?sort=name_a"
     visit "/products?sort=name_z"
     visit "/products?sort=low"

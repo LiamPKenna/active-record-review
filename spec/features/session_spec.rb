@@ -50,7 +50,7 @@ describe "the sesion create and destroy process" do
     expect(page).to have_content "There was a problem signing in. Please try again."
   end
 
-  it "allows a user to sign in" do
+  it "allows a user to sign out" do
     visit "/signin"
     fill_in 'email', :with => 'test@test.com'
     fill_in 'password', :with => 'test@test.com'
@@ -61,6 +61,15 @@ describe "the sesion create and destroy process" do
 
   it "requires users to log in in order to post reviews" do
     visit "/products/#{@product1.id}/reviews/new"
+    expect(page).to have_content "Sorry, you aren't authorized to visit that page."
+  end
+
+  it "requires users to log in in as admin to edit products" do
+    visit "/signin"
+    fill_in 'email', :with => 'test2@test.com'
+    fill_in 'password', :with => 'test2@test.com'
+    click_on 'Sign In'
+    visit "/products/#{@product1.id}/edit"
     expect(page).to have_content "Sorry, you aren't authorized to visit that page."
   end
 
