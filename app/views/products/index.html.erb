@@ -24,10 +24,10 @@
   <%end%>
   <% if current_user %>
     <% if current_user.admin %>
-      <p><%= link_to "Create a New Product", new_product_path %></p>
+      <%= button_to "Create a New Product", new_product_path %>
     <% end %>
   <% end %>
   <% if @origin %>
-    <p><%= link_to "Back To All Products", products_path %></p>
+    <%= button_to "Back To All Products", products_path %>
   <% end %>
 </div>
