@@ -1,7 +1,4 @@
 class ReviewsController < ApplicationController
-  def index
-    render :index
-  end
 
   def new
     @product = Product.find(params[:product_id])
@@ -36,7 +33,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     if @review.update(review_params)
       flash[:notice] = "#{@review.author} successfully updated their post!"
-      redirect_to product_path
+      redirect_to product_path(params[:product_id])
     else
       @product = Product.find(params[:product_id])
       render :edit
