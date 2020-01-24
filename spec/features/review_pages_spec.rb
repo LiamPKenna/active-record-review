@@ -58,19 +58,19 @@ describe "the review creation and editing process" do
     expect(page).to have_content "Author can't be blank"
   end
 
-  # it "allows for editing of a review" do
-  #   visit "/products"
-  #   click_on 'Prod1'
-  #   click_on 'Create new review'
-  #   fill_in 'review[author]', :with => 'Goober'
-  #   fill_in 'review[rating]', :with => 3
-  #   fill_in 'review[content_body]', :with => 'asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf'
-  #   click_on 'Create Review'
-  #   click_on 'Edit review'
-  #   fill_in 'review[author]', :with => 'test2'
-  #   click_on 'Update Review'
-  #   expect(page).to have_content 'Test2 successfully updated their post!'
-  # end
+  it "allows for editing of a review" do
+    visit "/products"
+    click_on 'Prod1'
+    click_on 'Create new review'
+    fill_in 'review[author]', :with => 'Goober'
+    fill_in 'review[rating]', :with => 3
+    fill_in 'review[content_body]', :with => 'asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf'
+    click_on 'Create Review'
+    click_on 'Edit review'
+    fill_in 'review[author]', :with => 'test2'
+    click_on 'Update Review'
+    expect(page).to have_content 'Test2 successfully updated their post!'
+  end
 
   it "gives an error when no author is entered when editing" do
     visit "/products/#{@product1.id}/reviews/#{@review.id}"
