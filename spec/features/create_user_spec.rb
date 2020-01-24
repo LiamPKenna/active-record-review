@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-describe "the add a product process" do
+describe "the add a user process" do
 
   before(:each) do
     users = User.all
