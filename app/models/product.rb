@@ -18,6 +18,8 @@ class Product < ApplicationRecord
     where("country_of_origin ilike ?", "#{origin_parameter}") 
   end
 
+  scope :usa, -> { where("country_of_origin ilike ?", "USA") }
+
   scope :by_reviews, -> {(
     select("products.id, products.name, count(reviews.id) as reviews_count")
     .joins(:reviews)

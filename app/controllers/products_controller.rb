@@ -25,7 +25,11 @@ class ProductsController < ApplicationController
     end
     if params[:origin]
       @origin = params[:origin]
-      @products = Product.from_origin(params[:origin])
+      if @origin == 'USA'
+        @products = Product.usa
+      else
+        @products = Product.from_origin(params[:origin])
+      end
     end
     render :index
   end
