@@ -1,6 +1,6 @@
 .nav-bar {
   text-align: center;
-  background-color: aquamarine;
+  background-color: rgb(170, 241, 218);
 }
 
 .jumbotron {
@@ -9,10 +9,15 @@
 
 p {
   text-align: center;
-  background-color: lightblue;
+  background-color: rgb(219, 205, 218);
   margin: 15px 18%;
   border-radius: 10px;
   padding: 8px;
+}
+
+p a {
+  color: black;
+  text-shadow: 1px 1px #c9525288;
 }
 
 .content {
