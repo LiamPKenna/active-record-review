@@ -16,6 +16,10 @@
         <td><%= form.label :password_confirmation %></td>
         <td><%= form.password_field :password_confirmation %></td>
       </tr>
+      <tr>
+        <td><%= form.label "Admin" %></td>
+        <td><%= form.check_box :admin %></td>
+      </tr>
     </table>
     <%= form.submit "Sign Up" %>
   <% end %>
