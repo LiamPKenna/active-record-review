@@ -48,3 +48,14 @@ input[type="submit"] {
   margin-top: 30px;
   width: 100%;
 }
+
+.user {
+  max-width: 500px;
+  margin: auto;
+}
+
+.in-out-new {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
