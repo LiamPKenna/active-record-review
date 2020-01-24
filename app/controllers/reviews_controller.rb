@@ -36,8 +36,9 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     if @review.update(review_params)
       flash[:notice] = "#{@review.author} successfully updated their post!"
-      redirect_to product_review_path
+      redirect_to product_path
     else
+      @product = Product.find(params[:product_id])
       render :edit
     end
   end
