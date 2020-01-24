@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-# imports of stylesheets must be commented out in application.css
-# otherwise all integration tests fail
 
 # describe "the add a product process" do
 #   it "adds a new productn" do
