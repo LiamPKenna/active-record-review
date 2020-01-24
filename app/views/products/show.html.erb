@@ -4,6 +4,11 @@
   <h4><%= "★" * @product.average_rating %></h4>
 </div>
 <div class="content">
+  <div class="pic">
+  <% if @product.product_photo.attached? %>
+    <%= image_tag @product.product_photo %>
+  <% end %>
+  </div>
   <%if @reviews.any?%>
   <h4>Reviews</h4>
   <br><br>

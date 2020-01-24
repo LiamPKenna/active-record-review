@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   has_many :reviews, dependent: :destroy
+  has_one_attached :product_photo
   validates :name, :cost, :country_of_origin, presence: true
 
   before_save(:titleize_name)
