@@ -9,9 +9,13 @@
     <%= @review.content_body %>
   </div>
   <br>
-  <p><%= link_to "Edit review", edit_product_review_path(@product, @review)%></p>
-  <p><%= link_to "Delete review", product_review_path(@review),
-    :data => {:confirm => "Are you sure?",
-    :method => "delete"} %></p>
+  <% if current_user %>
+    <% if current_user.admin %>
+      <p><%= link_to "Edit review", edit_product_review_path(@product, @review)%></p>
+      <p><%= link_to "Delete review", product_review_path(@review),
+        :data => {:confirm => "Are you sure?",
+        :method => "delete"} %></p>
+    <% end %>
+  <% end %>
   <p><%= link_to "Back to Product", product_path(@product)%></p> 
 </div>

@@ -22,7 +22,11 @@
   <%else%>
   <p>No products to display.</p>
   <%end%>
-  <p><%= link_to "Create a New Product", new_product_path %></p>
+  <% if current_user %>
+    <% if current_user.admin %>
+      <p><%= link_to "Create a New Product", new_product_path %></p>
+    <% end %>
+  <% end %>
   <% if @origin %>
     <p><%= link_to "Back To All Products", products_path %></p>
   <% end %>
