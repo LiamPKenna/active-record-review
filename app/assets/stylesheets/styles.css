@@ -15,6 +15,10 @@ p {
   padding: 8px;
 }
 
+input[type='submit'] {
+  background-color: rgb(219, 205, 218);
+}
+
 p a {
   color: black;
   text-shadow: 1px 1px #c9525288;
