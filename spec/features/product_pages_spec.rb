@@ -77,5 +77,15 @@ describe "the product creation and editing process" do
     expect(page).to have_content "Name can't be blank"
   end
 
+  it "allows users to sort products by name, price, and raiting" do
+    visit "/products"
+    visit "/products?sort=name_a"
+    visit "/products?sort=name_z"
+    visit "/products?sort=low"
+    visit "/products?sort=high"
+    click_on 'Rating'
+    expect(page).to have_content "Prod1"
+  end
+
 
 end
