@@ -68,3 +68,11 @@ input[type="submit"] {
   max-width: 800px;
   margin: auto;
 }
+
+tr {
+  width: 100%;
+}
+
+.links {
+  padding-bottom: 100px;
+}

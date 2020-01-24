@@ -22,12 +22,15 @@
   <%else%>
   <p>No products to display.</p>
   <%end%>
-  <% if current_user %>
-    <% if current_user.admin %>
-      <%= button_to "Create a New Product", new_product_path %>
+  <div class="links">
+    <% if current_user %>
+      <% if current_user.admin %>
+        <%= button_to "Create a New Product", new_product_path %>
+      <% end %>
     <% end %>
-  <% end %>
-  <% if @origin %>
-    <%= button_to "Back To All Products", products_path %>
-  <% end %>
+    <% if @origin %>
+      <%= button_to "Back To All Products", products_path %>
+    <% end %>
+    <br>
+  </div>
 </div>
