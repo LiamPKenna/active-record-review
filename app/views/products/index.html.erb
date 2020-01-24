@@ -25,11 +25,11 @@
   <div class="links">
     <% if current_user %>
       <% if current_user.admin %>
-        <%= button_to "Create a New Product", new_product_path %>
+        <p><%= link_to "Create a New Product", new_product_path %></p>
       <% end %>
     <% end %>
     <% if @origin %>
-      <%= button_to "Back To All Products", products_path %>
+      <p><%= link_to "Back To All Products", products_path %></p>
     <% end %>
     <br>
   </div>
