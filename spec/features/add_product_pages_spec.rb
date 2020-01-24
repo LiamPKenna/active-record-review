@@ -2,9 +2,45 @@ require 'rails_helper'
 
 
 # describe "the add a product process" do
-#   it "adds a new productn" do
-#     visit products_path
-#     click_link 'Create a New Product'
+
+#   before(:all) do
+#     @product1 = Product.new(
+#       :name => 'prod1',
+#       :cost => 5.50,
+#       :country_of_origin => 'USA'
+#     )
+#     @product1.save
+#     @product2 = Product.new(
+#       :name => 'prod2',
+#       :cost => 5.80,
+#       :country_of_origin => 'Canada'
+#     )
+#     @product2.save
+#     review = Review.new(
+#       :author => 'test name', 
+#       :rating => 3, 
+#       :product_id => @product1.id,
+#       :content_body => 'asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf')
+#     review.save
+#     review2 = Review.new(
+#       :author => 'test name', 
+#       :rating => 1, 
+#       :product_id => @product1.id,
+#       :content_body => 'asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf')
+#     review2.save
+#   end
+
+#   before(:each) do
+#     visit "/signup"
+#     fill_in 'user[email]', :with => 'test@test.com'
+#     fill_in 'user[password]', :with => 'test@test.com'
+#     fill_in 'user[password_confirmation]', :with => 'test@test.com'
+#     check 'user[admin]'
+#     click_on 'Sign Up'
+#   end
+
+#   it "adds a new product" do
+#     visit '/products/new'
 #     fill_in 'product[name]', :with => 'test'
 #     fill_in 'product[cost]', :with => 3
 #     fill_in 'product[country_of_origin]', :with => 'USA'
