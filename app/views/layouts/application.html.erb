@@ -12,8 +12,17 @@
   <body>
     <div class="nav-bar table-responsive">
       <table class="table">
-        <th><%= link_to "HOME", '/'%></th>
-        <th><%= link_to "PRODUCTS", products_path%></th>
+        <tr>
+          <th><%= link_to "HOME", '/'%></th>
+          <th><%= link_to "PRODUCTS", products_path%></th>
+          <th>
+            <% if current_user %>
+              <%= link_to "sign-out", '/signout' %>
+            <% else %>
+              <%= link_to "sign-in", '/signin' %> | <%= link_to "sign-up", '/signup' %>
+            <% end %>
+          </th>
+        </tr>
       </table>
     </div>
     <%= flash[:alert] %>
