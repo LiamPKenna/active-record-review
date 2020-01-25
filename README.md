@@ -1,6 +1,6 @@
 # _Food Company Rails MVP_
 
-#### _Web application that tracks products and their reviews., January 17, 2020_
+#### _Web application that tracks products and their reviews., January 17 & 24, 2020_
 
 #### By _**Liam Kenna**_
 
@@ -8,9 +8,15 @@
 
 _This site is a simple Rails application that allows for the storing and reviewing of products. Users are able to:_
 
-* _view, add, update and delete products and reviews_
+* _view products_
+* _view and add reviews_
 * _view the product with the most reviews & three newest items from the landing page_
 * _sort products by name, price, origin, or average rating_
+
+_Admin users are able to:_
+
+* _view, add, update and delete products and reviews_
+* _all functionality of no-admin users_
 
 _All user inputs are validated to meet the following specs:_
 
@@ -41,13 +47,13 @@ _All user inputs are validated to meet the following specs:_
 _To explore the source code, feel free to browse on github or clone to your local machine_
 
 ## Known Bugs
-_Integration tests will not run unless CSS imports are commented out in application.css._
+_No known bugs_
 
 ## Support and contact details
 _Any issues or concerns, please email liam@liamkenna.com_
 
 ## Technologies Used
-_HTML, CSS, Bootsrap, Ruby(2.6.5), Rails(5.2.4), Postgresql_
+_HTML, CSS, Bootsrap, Ruby(2.6.5), Rails(5.2.4), Postgresql, bcrypt_
 
 ### License
 *This software is available under the MIT License*
