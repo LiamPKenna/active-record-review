@@ -3,6 +3,15 @@ require 'rails_helper'
 
 describe "the add a user process" do
 
+  before(:all) do
+    @product1 = Product.new(
+      :name => 'prod1',
+      :cost => 5.50,
+      :country_of_origin => 'USA'
+    )
+    @product1.save
+  end
+
   before(:each) do
     users = User.all
     users.each { |u| u.destroy }
