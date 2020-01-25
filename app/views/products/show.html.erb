@@ -9,7 +9,7 @@
     <%= image_tag @product.product_photo %>
   <% end %>
   </div>
-  <%if @reviews.any?%>
+  <% if @reviews.any? %>
   <h4>Reviews</h4>
   <br><br>
   <table class="table">
@@ -18,17 +18,17 @@
       <th>Review</th>
       <th>Rating</th>
     </tr>
-    <%@reviews.each do |review|%>
+    <% @reviews.each do |review| %>
     <tr>
-      <td><%= link_to review.author, product_review_path(@product, review)%></td>
-      <td><%= review.content_body.slice(0..45)... %></td>
-      <td><%= link_to "#{'★' * review.rating}", product_review_path(@product, review)%></td>
+      <td><%= link_to review.author, product_review_path(@product, review) %></td>
+      <td><%= review.content_body.slice(0..45) %>...</td>
+      <td><%= link_to "#{'★' * review.rating}", product_review_path(@product, review) %></td>
     </tr>
-    <%end%>
+    <% end %>
   </table>
-  <%else%>
+  <% else %>
   <p>No reviews to display.</p>
-  <%end%>
+  <% end %>
   <br>
   <div class="links">
   <% if current_user %>
