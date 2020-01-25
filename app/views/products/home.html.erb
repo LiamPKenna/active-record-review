@@ -3,8 +3,10 @@
 </div>
 <div class="content">
   <div class="top-dog">
+  <% if @most  %>
     <h3>Our most reviewed product:</h3>
     <h2><%= link_to @most.name, product_path(@most)%></h2>
+  <% end %>
   </div>
   <%if @products.any?%>
   <br>
