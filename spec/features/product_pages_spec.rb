@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 describe "the product creation and editing process" do
-
+  
   before(:all) do
     products = Product.all
     products.each { |prod| prod.destroy }
@@ -88,6 +88,7 @@ describe "the product creation and editing process" do
     click_on 'Rating'
     expect(page).to have_content "Prod1"
   end
+
 
 
 end

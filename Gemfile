@@ -48,6 +48,7 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'simplecov', require: false
+  gem 'selenium-webdriver'
 end
 
 group :development do
